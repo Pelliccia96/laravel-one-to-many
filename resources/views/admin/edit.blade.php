@@ -31,6 +31,13 @@
                 </div>
             @enderror
 
+            <label class="form-label">Type: </label>
+            <select name="type_id" class="form-select mb-4">
+                @foreach ($types as $type)
+                <option value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+            </select>
+
             <label class="form-label">Description: </label>
             <textarea type="text" name="description" class="form-control mb-4 @error('description') is-invalid @enderror" rows="3">{{ $errors->has('description') ? '' : $project->description }}</textarea>
             @error('description')

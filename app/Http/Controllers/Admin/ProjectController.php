@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
@@ -92,7 +93,9 @@ class ProjectController extends Controller
     {
         // $project = Project::findOrFail($id);
 
-        return view('admin.edit', compact('project'));
+        $types = Type::all();
+
+        return view('admin.edit', compact('project', 'types'));
     }
 
     /**

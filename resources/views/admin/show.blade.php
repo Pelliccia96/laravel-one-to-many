@@ -46,6 +46,7 @@
             @endif
             <div class="card-body">
                 <div class="card-title"><strong>Titolo:</strong> {{ $project->name }}</div>
+                <div class="card-title"><strong>Tipo:</strong> {{ $project->type ? $project->type->name : '' }}</div>
                 <p class="card-text"><strong>Descrizione:</strong> {{ $project->description }}</p>
                 <div><strong>GitHub:</strong> {{ $project->github_link }} </div>
             </div>

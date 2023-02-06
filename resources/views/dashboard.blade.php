@@ -69,7 +69,7 @@
                     <td>{{ $project->type ? $project->type->name : '' }}</td>
                     <td>{{ $project->description }}</td>
                     <td>
-                        <img src="{{ asset('/storage/' . $project['cover_img']) }}" class="w-50">
+                        <img src="{{ asset('/storage/' . $project['cover_img']) }}" class="w-150">
                     </td>
                     <td>{{ $project->github_link }}</td>
                     <td><a href="{{ route('projects.show', $project->id) }}" class="text-decoration-none fw-semibold">Show #{{ $project->id }}</a></td>

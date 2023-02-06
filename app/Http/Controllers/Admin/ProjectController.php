@@ -55,8 +55,6 @@ class ProjectController extends Controller
     {
         // validated() usa le regole indicate nella funzione rules dello StorePostRequest e ci ritorna i dati validati
         $data = $request->validated();
-
-        $types = Type::all();
         
         // $data = $request->all();
 
@@ -73,7 +71,7 @@ class ProjectController extends Controller
         $project->cover_img = $path;
         $project->save();
 
-        return redirect()->route('projects.show', $project->id, compact('types'));
+        return redirect()->route('projects.show', $project->id);
     }
 
     /**

@@ -12,6 +12,7 @@
                 <tr>
                 <th>ID</th>
                 <th>Titolo</th>
+                <th>Tipo</th>
                 <th>Descrizione</th>
                 <th>Immagine</th>
                 <th>GitHub</th>
@@ -21,6 +22,7 @@
                 <tr>
                     <td>{{ $project->id }}</td>
                     <td>{{ $project->name }}</td>
+                    <td>{{ $project->type ? $project->type->name : '' }}</td>
                     <td>{{ $project->description }}</td>
                     <td>
                         <img src="{{ asset('/storage/' . $project['cover_img']) }}">

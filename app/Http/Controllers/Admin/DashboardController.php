@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Project;
+use App\Models\Type;
 
 class DashboardController extends Controller
 {
@@ -19,6 +20,8 @@ class DashboardController extends Controller
 
         $projects = Project::all();
 
-        return view("dashboard", compact("users", "projects"));
+        $types = Type::all();
+
+        return view("dashboard", compact("users", "projects", "types"));
     }
 }
